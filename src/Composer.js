@@ -40,11 +40,11 @@ export default class Composer extends React.Component {
         onChangeText={(text) => this.onChangeText(text)}
         style={[styles.textInput, this.props.textInputStyle, { height: this.props.composerHeight }]}
         autoFocus={this.props.textInputAutoFocus}
-        value={this.props.text}
         accessibilityLabel={this.props.text || this.props.placeholder}
         enablesReturnKeyAutomatically
         underlineColorAndroid="transparent"
         keyboardAppearance={this.props.keyboardAppearance}
+        value={this.props.value}
         {...this.props.textInputProps}
       />
     );
