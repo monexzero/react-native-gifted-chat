@@ -474,7 +474,7 @@ class GiftedChat extends React.Component {
 
   render() {
     const _style = {
-      styles.container,
+      ...styles.container,
       ...this.props.style,
     };
     if (this.state.isInitialized === true) {
