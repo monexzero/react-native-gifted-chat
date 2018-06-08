@@ -473,10 +473,14 @@ class GiftedChat extends React.Component {
   }
 
   render() {
+    const _style = {
+      styles.container,
+      ...this.props.style,
+    };
     if (this.state.isInitialized === true) {
       return (
         <ActionSheet ref={(component) => (this._actionSheetRef = component)}>
-          <View style={styles.container} onLayout={this.onMainViewLayout}>
+          <View style={_style} onLayout={this.onMainViewLayout}>
             {this.renderMessages()}
             {this.renderInputToolbar()}
           </View>
@@ -484,7 +488,7 @@ class GiftedChat extends React.Component {
       );
     }
     return (
-      <View style={styles.container} onLayout={this.onInitialLayoutViewLayout}>
+      <View style={_style} onLayout={this.onInitialLayoutViewLayout}>
         {this.renderLoading()}
       </View>
     );
@@ -504,6 +508,7 @@ GiftedChat.childContextTypes = {
 };
 
 GiftedChat.defaultProps = {
+  style: {},
   messages: [],
   text: undefined,
   placeholder: DEFAULT_PLACEHOLDER,
